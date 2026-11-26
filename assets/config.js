@@ -1,0 +1,1 @@
+window.IRISTON_CONFIG={telegram:"",whatsapp:"",phone:"",vk:"",email:"",gym:"",prices:[],reviews:[],results:[]};
