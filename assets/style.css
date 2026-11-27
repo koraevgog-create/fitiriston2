@@ -52,3 +52,25 @@ h1 em{font-style:italic}
 @media(max-width:960px){.hero-photo{background-size:contain;background-position:right bottom}.about-photo{background-size:contain;background-position:center bottom}}
 @media(max-width:650px){.hero-photo{background-size:contain;background-position:center bottom}.about-photo{background-size:contain}.goal-card{background:linear-gradient(0deg,#080808e8,transparent 95%),var(--picture) center/cover}.goal-title h2 em{white-space:normal}}
 .services img{object-position:center 15%}
+
+/* Seamless cinematic composition: no duplicate trainer in background. */
+.hero-scene,.about-scene{background-image:linear-gradient(90deg,#090909 0%,#101010 36%,#171310 66%,#090909 100%)}
+.hero-scene:before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 82% 55%,#6e240d88,transparent 38%),repeating-linear-gradient(105deg,transparent 0 11%,#9999990b 11.2% 12%,transparent 12.5% 19%);pointer-events:none}
+.hero-scene:after{background:linear-gradient(114deg,transparent 0 80%,#ffb96a 80.4%,#ff4a18 81%,transparent 81.7%),linear-gradient(163deg,transparent 20%,#ff4718 20.7%,#ffb450 21%,transparent 22%);opacity:.65}
+@media(min-width:961px){
+.hero-photo{left:43.7%;right:5%;top:0;bottom:0;background-size:100% auto;background-position:center 0;mask-image:linear-gradient(90deg,transparent 0%,#000 21%,#000 72%,transparent 100%);-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 21%,#000 72%,transparent 100%)}
+.hero-photo:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#09090920,transparent 20%);pointer-events:none}
+.hero-copy{max-width:65%}
+.hero .stats{gap:1.55vw}
+.hero .actions .btn,.hero .actions .outline{font-weight:600}
+.about-scene{min-height:20vw;grid-template-columns:41% 1fr;background:radial-gradient(ellipse at 36% 100%,#6b230f80,transparent 35%),linear-gradient(110deg,#090909,#151311 43%,#090909 68%);padding-top:2.4vw!important}
+.about-photo{inset:0 auto 0 22%;width:21%;background-size:100% auto;background-position:center 0;mask-image:linear-gradient(90deg,transparent 0%,#000 22%,#000 72%,transparent 100%);-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 22%,#000 72%,transparent 100%)}
+.about-title h2{font-size:3.72vw;max-width:20vw}
+.about-title p{max-width:21vw}
+.about-copy{position:relative;z-index:1}
+.about-scene:after{content:'';position:absolute;bottom:0;left:34%;right:15%;height:2px;background:linear-gradient(90deg,transparent,#ff4700,#ff9b23,transparent);box-shadow:0 0 19px #ff5a00;transform:rotate(-4deg);transform-origin:left}
+.goal-card{background-image:linear-gradient(90deg,#080808f0 0%,#08080870 42%,#08080808 100%),linear-gradient(0deg,#090909f0,transparent 55%),var(--picture);background-position:center;background-size:cover}
+.goal-card:before{background:radial-gradient(ellipse at 95% 100%,#ff380c70,transparent 36%)}
+}
+@media(max-width:960px){.hero-photo{mask-image:linear-gradient(90deg,transparent,#000 20% 75%,transparent)}.about-scene{background:radial-gradient(ellipse at 30% 80%,#53200d55,transparent 45%),#090909}}
+@media(max-width:650px){.hero-photo,.about-photo{mask-image:linear-gradient(0deg,transparent,#000 12% 90%,transparent)}}
